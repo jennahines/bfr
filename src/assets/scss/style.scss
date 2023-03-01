@@ -33,6 +33,7 @@
 //    partials in this section.
 
 @import 'tools/font-styles';
+@import 'tools/screen-reader';
 
 // =====================================================================
 // 3. Generic
@@ -85,3 +86,4 @@
 //    which goes before in the triangle, eg. hide helper class
 
 @import 'utilities/spacing';
+@import 'utilities/screen-reader';
