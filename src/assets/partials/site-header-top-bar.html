@@ -12,7 +12,16 @@
     />
   </a>
 
-  <nav class="site-header__utility-nav">
+  <button
+    class="site-header__utility-button"
+    aria-controls="utility-nav"
+    aria-label="Toggle Utility Menu"
+  >
+    <span class="menu"><img src="menu.svg" alt="" /></span>
+    <span class="close"><img src="close.svg" alt="" /></span>
+  </button>
+
+  <nav id="utility-nav" class="site-header__utility-nav">
     <ul class="site-header__utility-list">
       <li class="site-header__utility-item">
         <a href="#" class="site-header__utility-link">BuckeyeLink</a>

@@ -1,5 +1,22 @@
 .site-header {
+  // overflow: hidden;
+  width: 100vw;
+
+  /* The value of "content" is checked in navigation.js to
+	determine which functions to execute for mobile vs desktop nav.
+	Be sure to update any other media queries in this file if changing this one. */
+  &::after {
+    @include sr-only;
+
+    content: 'mobile';
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      content: 'desktop';
+    }
+  }
+
   &__top-bar {
+    position: relative;
     padding: var(--size-xxs) var(--size-xl);
     border-bottom: 2px solid var(--color-gray-dark-40);
     display: flex;
@@ -7,17 +24,83 @@
     justify-content: space-between;
   }
 
+  &__osu-logo {
+    padding: var(--size-xxs) 0;
+  }
+
+  &__utility-button {
+    background: transparent;
+    border: 0;
+    margin-left: auto;
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+
+    &[aria-expanded='false'] {
+      .close {
+        display: none;
+      }
+    }
+
+    &[aria-expanded='true'] {
+      .menu {
+        display: none;
+      }
+    }
+  }
+
+  &__utility-nav {
+    position: absolute;
+    top: calc(100% + 2px); // bottom border width
+    left: 100%;
+    width: 100vw;
+    height: 100dvh;
+    padding-top: var(--size-md);
+    padding-bottom: var(--size-md);
+    background: var(--color-gray-light-40);
+    z-index: 10;
+    transition: transform 0.2s ease;
+
+    &[aria-hidden='false'] {
+      transform: translateX(-100%);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: auto;
+      height: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+      background: transparent;
+
+      &[aria-hidden='false'] {
+        transform: translateX(0);
+      }
+    }
+  }
+
   &__utility-list {
     list-style: none;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--size-sm);
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   &__utility-link {
     display: block;
     color: var(--color-gray-dark-80);
     text-decoration: underline;
-    padding: var(--size-xxs);
+    font-size: var(--size-xs);
+    padding: var(--size-xxs) 0;
   }
 
   &__main {
