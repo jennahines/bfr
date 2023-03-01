@@ -1,0 +1,69 @@
+@each $key, $val in $scale-values {
+  .util-margin-t-#{$key} {
+    margin-top: #{$val}rem;
+  }
+  .util-margin-b-#{$key} {
+    margin-bottom: #{$val}rem;
+  }
+  .util-margin-l-#{$key} {
+    margin-left: #{$val}rem;
+  }
+  .util-margin-r-#{$key} {
+    margin-right: #{$val}rem;
+  }
+  .util-margin-x-#{$key} {
+    margin-left: #{$val}rem;
+    margin-right: #{$val}rem;
+  }
+  .util-margin-y-#{$key} {
+    margin-top: #{$val}rem;
+    margin-bottom: #{$val}rem;
+  }
+
+  .util-padding-t-#{$key} {
+    padding-top: #{$val}rem;
+  }
+  .util-padding-b-#{$key} {
+    padding-bottom: #{$val}rem;
+  }
+  .util-padding-l-#{$key} {
+    padding-left: #{$val}rem;
+  }
+  .util-padding-r-#{$key} {
+    padding-right: #{$val}rem;
+  }
+  .util-padding-x-#{$key} {
+    padding-left: #{$val}rem;
+    padding-right: #{$val}rem;
+  }
+  .util-padding-y-#{$key} {
+    padding-top: #{$val}rem;
+    padding-bottom: #{$val}rem;
+  }
+}
+
+.util-margin-t-auto {
+  margin-top: auto;
+}
+
+.util-margin-b-auto {
+  margin-bottom: auto;
+}
+
+.util-margin-l-auto {
+  margin-left: auto;
+}
+
+.util-margin-r-auto {
+  margin-right: auto;
+}
+
+.util-margin-x-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.util-margin-y-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}

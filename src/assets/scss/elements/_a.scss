@@ -1,0 +1,9 @@
+a {
+  color: var(--color-scarlet);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}

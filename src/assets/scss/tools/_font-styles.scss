@@ -1,0 +1,15 @@
+@mixin font-sans($weight: null) {
+  font-family: var(--font-sans);
+
+  @if $weight {
+    font-weight: var(--weight-#{$weight});
+  }
+}
+
+@mixin font-serif($weight: null) {
+  font-family: var(--font-serif);
+
+  @if $weight {
+    font-weight: var(--weight-#{$weight});
+  }
+}

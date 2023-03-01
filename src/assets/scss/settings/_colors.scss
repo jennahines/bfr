@@ -1,0 +1,22 @@
+@use 'sass:map';
+@use 'sass:color';
+
+// theme colors
+$colors: (
+  'scarlet': #ba0c2f,
+  'black': #292826,
+  'white': #fff,
+);
+
+// grayscale
+$grays: (
+  'light': (
+    '40': #cfd4d8,
+    '60': #dfe3e5,
+    '90': #f6f7f8,
+  ),
+  'dark': (
+    '40': #646a6e,
+    '80': #212325,
+  ),
+);

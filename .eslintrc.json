@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended", "airbnb-base", "prettier"],
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "rules": {
+    "import/prefer-default-export": 0
+  }
+}

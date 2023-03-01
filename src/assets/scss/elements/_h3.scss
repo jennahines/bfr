@@ -1,0 +1,7 @@
+h3 {
+  @include font-serif('black');
+
+  font-size: var(--size-xxxl);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--size-lg);
+}

@@ -1,0 +1,108 @@
+// Buckeye Sans
+// weights: 400, 400i, 600, 600i, 700, 700i, 900, 900i
+
+@font-face {
+  font-family: 'Buckeye Sans';
+  src: url('../fonts/buckeye-sans/BuckeyeSans-Regular.woff2') format('woff2'),
+    url('../fonts/buckeye-sans/BuckeyeSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Buckeye Sans';
+  src: url('../fonts/buckeye-sans/BuckeyeSans-Italic.woff2') format('woff2'),
+    url('../fonts/buckeye-sans/BuckeyeSans-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Buckeye Sans';
+  src: url('../fonts/buckeye-sans/BuckeyeSansSemiBold-Regular.woff2')
+      format('woff2'),
+    url('../fonts/buckeye-sans/BuckeyeSansSemiBold-Regular.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Buckeye Sans';
+  src: url('../fonts/buckeye-sans/BuckeyeSansSemiBold-Italic.woff2')
+      format('woff2'),
+    url('../fonts/buckeye-sans/BuckeyeSansSemiBold-Italic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Buckeye Sans';
+  src: url('../fonts/buckeye-sans/BuckeyeSans-BoldItalic.woff2') format('woff2'),
+    url('../fonts/buckeye-sans/BuckeyeSans-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Buckeye Sans';
+  src: url('../fonts/buckeye-sans/BuckeyeSans-Bold.woff2') format('woff2'),
+    url('../fonts/buckeye-sans/BuckeyeSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Buckeye Sans';
+  src: url('../fonts/buckeye-sans/BuckeyeSans-BoldItalic.woff2') format('woff2'),
+    url('../fonts/buckeye-sans/BuckeyeSans-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Buckeye Sans';
+  src: url('../fonts/buckeye-sans/BuckeyeSansBlack-Regular.woff2')
+      format('woff2'),
+    url('../fonts/buckeye-sans/BuckeyeSansBlack-Regular.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Buckeye Sans';
+  src: url('../fonts/buckeye-sans/BuckeyeSansBlack-Italic.woff2')
+      format('woff2'),
+    url('../fonts/buckeye-sans/BuckeyeSansBlack-Italic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: fallback;
+}
+
+// Buckeye Serif
+// weights: 400, 700
+
+@font-face {
+  font-family: 'Buckeye Serif';
+  src: url('../fonts/buckeye-serif/BuckeyeSerif-Regular.woff2') format('woff2'),
+    url('../fonts/buckeye-serif/BuckeyeSerif-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Buckeye Serif';
+  src: url('../fonts/buckeye-serif/BuckeyeSerif-Bold.woff2') format('woff2'),
+    url('../fonts/buckeye-serif/BuckeyeSerif-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}

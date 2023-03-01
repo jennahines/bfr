@@ -1,0 +1,30 @@
+// font family
+$font-families: (
+  'sans': (
+    'Buckeye Sans',
+    'Helvetica',
+    sans-serif,
+  ),
+  'serif': (
+    'Buckeye Serif',
+    'Times New Roman',
+    serif,
+  ),
+);
+
+// line-heights
+$line-heights: (
+  'none': 1,
+  'tight': 1.125,
+  'snug': 1.45,
+  'normal': 1.625,
+);
+
+// font-weights
+$font-weights: (
+  'book': 300,
+  'regular': 400,
+  'semibold': 600,
+  'bold': 700,
+  'black': 900,
+);

@@ -1,0 +1,31 @@
+:root {
+  @each $key, $val in $colors {
+    --color-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $grays {
+    @each $sub_key, $sub_val in $key {
+      --color-gray-#{$key}-#{$sub_key}: #{$sub_val};
+    }
+  }
+
+  @each $key, $val in $font-families {
+    --font-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $font-weights {
+    --weight-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $scale-values {
+    --size-#{$key}: calc(#{$val} / #{$scale-base} * 1rem);
+  }
+
+  @each $key, $val in $line-heights {
+    --line-height-#{$key}: #{$val};
+  }
+
+  @media (prefers-reduced-motion) {
+    --transition: none;
+  }
+}
