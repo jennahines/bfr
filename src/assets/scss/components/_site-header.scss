@@ -124,7 +124,11 @@
     .obj-container {
       display: grid;
       grid-template-columns: 1fr max-content;
-      column-gap: var(--size-md);
+      gap: var(--size-md);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      padding-bottom: 0;
     }
 
     @media screen and (min-width: map-get($breakpoints, 'md')) {
@@ -134,6 +138,7 @@
 
   &__main-logo {
     color: var(--color-gray-dark-80);
+    align-self: center;
 
     &:hover,
     &:focus {
@@ -145,7 +150,7 @@
 
       text-transform: uppercase;
       display: block;
-      font-size: var(--size-sm);
+      font-size: clamp(var(--size-xs), 4vw, var(--size-sm));
       line-height: var(--line-height-none);
     }
   }
@@ -210,10 +215,10 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: var(--size-md);
 
     @media screen and (min-width: map-get($breakpoints, 'md')) {
       flex-direction: row;
+      column-gap: var(--size-md);
     }
   }
 
