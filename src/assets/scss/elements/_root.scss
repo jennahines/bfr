@@ -25,6 +25,10 @@
     --line-height-#{$key}: #{$val};
   }
 
+  @each $key, $val in $widths {
+    --width-#{$key}: #{$val};
+  }
+
   @media (prefers-reduced-motion) {
     --transition: none;
   }
