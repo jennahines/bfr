@@ -4,7 +4,7 @@
   }
 
   @each $key, $val in $grays {
-    @each $sub_key, $sub_val in $key {
+    @each $sub_key, $sub_val in $val {
       --color-gray-#{$key}-#{$sub_key}: #{$sub_val};
     }
   }
