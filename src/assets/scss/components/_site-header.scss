@@ -1,0 +1,122 @@
+.site-header {
+  &__top-bar {
+    padding: var(--size-xxs) var(--size-xl);
+    border-bottom: 2px solid var(--color-gray-dark-40);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__utility-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+
+  &__utility-link {
+    display: block;
+    color: var(--color-gray-dark-80);
+    text-decoration: underline;
+    padding: var(--size-xxs);
+  }
+
+  &__main {
+    border-bottom: 1px solid var(--color-gray-light-60);
+    padding-top: var(--size-xl);
+
+    .obj-container {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      column-gap: var(--size-md);
+    }
+  }
+
+  &__main-logo {
+    color: var(--color-gray-dark-80);
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    .kicker {
+      @include font-sans;
+
+      text-transform: uppercase;
+      display: block;
+      font-size: var(--size-sm);
+      line-height: var(--line-height-none);
+    }
+  }
+
+  &__actions {
+    margin-left: auto;
+    align-self: center;
+  }
+
+  &__button {
+    background: transparent;
+    border: 0;
+  }
+
+  &__nav {
+    width: 100%;
+    grid-column: -1 / 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    gap: var(--size-md);
+  }
+
+  &__link {
+    display: block;
+    padding: var(--size-md) 0;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &__list--primary &__link {
+    color: var(--color-gray-dark-80l);
+    font-weight: var(--weight-bold);
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 4px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: var(--color-scarlet);
+      transition: width 0.2s ease;
+    }
+
+    &:hover,
+    &:focus,
+    &--current {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &__list--secondary &__link {
+    color: var(--color-gray-dark-40);
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      color: var(--color-gray-dark-80);
+    }
+  }
+}
