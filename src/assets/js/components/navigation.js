@@ -9,7 +9,7 @@ function Navigation() {
   function handleUtilityMenu() {
     const utilityNav = document.querySelector('.site-header__utility-nav');
     const utilityNavToggle = document.querySelector(
-      '.site-header__utility-button'
+      '.site-header__button--util-menu'
     );
 
     function toggleMobileUtilityMenu() {
@@ -33,7 +33,30 @@ function Navigation() {
     }
   }
 
-  function handleMainMenu() {}
+  function handleMainMenu() {
+    const mainNav = document.querySelector('.site-header__nav');
+    const mainNavToggle = document.querySelector('.site-header__button--menu');
+
+    function toggleMobileUtilityMenu() {
+      if (mainNavToggle.getAttribute('aria-expanded') === 'true') {
+        mainNavToggle.setAttribute('aria-expanded', 'false');
+        mainNav.setAttribute('aria-hidden', 'true');
+      } else {
+        mainNavToggle.setAttribute('aria-expanded', 'true');
+        mainNav.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    if (SCREEN === `"mobile"`) {
+      mainNav.setAttribute('aria-hidden', 'true');
+      mainNavToggle.setAttribute('aria-hidden', 'false');
+      mainNavToggle.setAttribute('aria-expanded', 'false');
+      mainNavToggle.addEventListener('click', toggleMobileUtilityMenu);
+    } else {
+      mainNav.setAttribute('aria-hidden', 'false');
+      mainNavToggle.setAttribute('aria-hidden', 'true');
+    }
+  }
 
   function initNavigation() {
     SCREEN = window.getComputedStyle(siteHeader, '::after').content;

@@ -15,22 +15,16 @@
     }
   }
 
-  &__top-bar {
-    position: relative;
-    padding: var(--size-xxs) var(--size-xl);
-    border-bottom: 2px solid var(--color-gray-dark-40);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  // -----------------------------------------
+  //	shared button styles
+  // -----------------------------------------
 
-  &__osu-logo {
-    padding: var(--size-xxs) 0;
-  }
-
-  &__utility-button {
+  &__button {
     background: transparent;
     border: 0;
+  }
+
+  &__menu-toggle {
     margin-left: auto;
 
     &[aria-hidden='true'] {
@@ -48,6 +42,22 @@
         display: none;
       }
     }
+  }
+
+  // -----------------------------------------
+  //	top header section
+  // -----------------------------------------
+  &__top-bar {
+    position: relative;
+    padding: var(--size-xxs) var(--size-md);
+    border-bottom: 2px solid var(--color-gray-dark-40);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__osu-logo {
+    padding: var(--size-xxs) 0;
   }
 
   &__utility-nav {
@@ -103,14 +113,22 @@
     padding: var(--size-xxs) 0;
   }
 
+  // -----------------------------------------
+  //	main header section
+  // -----------------------------------------
   &__main {
+    position: relative;
     border-bottom: 1px solid var(--color-gray-light-60);
-    padding-top: var(--size-xl);
+    padding: var(--size-xl) 0;
 
     .obj-container {
       display: grid;
       grid-template-columns: 1fr max-content;
       column-gap: var(--size-md);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      padding-bottom: 0;
     }
   }
 
@@ -135,35 +153,82 @@
   &__actions {
     margin-left: auto;
     align-self: center;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--size-sm);
+    align-items: center;
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      flex-direction: row;
+    }
   }
 
-  &__button {
-    background: transparent;
-    border: 0;
+  &__button--menu {
+    svg line {
+      stroke: var(--color-scarlet);
+    }
   }
 
   &__nav {
-    width: 100%;
-    grid-column: -1 / 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: absolute;
+    top: calc(100% + 2px); // bottom border width
+    left: 100%;
+    width: 100vw;
+    height: 100dvh;
+    padding-top: var(--size-md);
+    padding-bottom: var(--size-md);
+    background: var(--color-gray-light-40);
+    z-index: 10;
+    transition: transform 0.2s ease;
+
+    &[aria-hidden='false'] {
+      transform: translateX(-100%);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      height: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+      background: transparent;
+      grid-column: -1 / 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &[aria-hidden='false'] {
+        transform: translateX(0);
+      }
+    }
   }
 
   &__list {
-    padding-left: 0;
+    padding: 0;
     list-style: none;
     display: flex;
+    flex-direction: column;
     gap: var(--size-md);
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      flex-direction: row;
+    }
   }
 
   &__link {
     display: block;
-    padding: var(--size-md) 0;
+    padding: var(--size-md);
 
     &:hover,
     &:focus {
       text-decoration: none;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -175,19 +240,28 @@
     &::after {
       content: '';
       width: 0;
-      height: 4px;
+      height: 100%;
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
       background-color: var(--color-scarlet);
       transition: width 0.2s ease;
+
+      @media screen and (min-width: map-get($breakpoints, 'md')) {
+        height: 4px;
+        top: auto;
+        bottom: 0;
+      }
     }
 
     &:hover,
     &:focus,
     &--current {
       &::after {
-        width: 100%;
+        width: 4px;
+        @media screen and (min-width: map-get($breakpoints, 'md')) {
+          width: 100%;
+        }
       }
     }
   }
@@ -195,6 +269,7 @@
   /* stylelint-disable-next-line no-descending-specificity */
   &__list--secondary &__link {
     color: var(--color-gray-dark-40);
+    font-size: var(--size-xs);
     transition: color 0.2s ease;
 
     &:hover,
