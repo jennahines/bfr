@@ -1,7 +1,8 @@
-h3 {
+h3,
+.h3 {
   @include font-serif('black');
 
-  font-size: var(--size-xxxl);
+  font-size: clamp(var(--size-xl), 5vw, var(--size-xxxl));
   line-height: var(--line-height-tight);
   margin-bottom: var(--size-lg);
 }

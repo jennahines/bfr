@@ -1,0 +1,285 @@
+.site-header {
+  // overflow: hidden;
+  width: 100vw;
+
+  /* The value of "content" is checked in navigation.js to
+	determine which functions to execute for mobile vs desktop nav.
+	Be sure to update any other media queries in this file if changing this one. */
+  &::after {
+    @include sr-only;
+
+    content: 'mobile';
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      content: 'desktop';
+    }
+  }
+
+  // -----------------------------------------
+  //	shared button styles
+  // -----------------------------------------
+
+  &__button {
+    background: transparent;
+    border: 0;
+  }
+
+  &__menu-toggle {
+    margin-left: auto;
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+
+    &[aria-expanded='false'] {
+      .close {
+        display: none;
+      }
+    }
+
+    &[aria-expanded='true'] {
+      .menu {
+        display: none;
+      }
+    }
+  }
+
+  // -----------------------------------------
+  //	top header section
+  // -----------------------------------------
+  &__top-bar {
+    position: relative;
+    padding: var(--size-xxs) var(--size-md);
+    border-bottom: 2px solid var(--color-gray-dark-40);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__osu-logo {
+    padding: var(--size-xxs) 0;
+  }
+
+  &__utility-nav {
+    position: absolute;
+    top: calc(100% + 2px); // bottom border width
+    left: 100%;
+    width: 100vw;
+    height: 100dvh;
+    padding-top: var(--size-md);
+    padding-bottom: var(--size-md);
+    background: var(--color-gray-light-40);
+    z-index: 10;
+    transition: transform 0.2s ease;
+
+    &[aria-hidden='false'] {
+      transform: translateX(-100%);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: auto;
+      height: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+      background: transparent;
+
+      &[aria-hidden='false'] {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__utility-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--size-sm);
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__utility-link {
+    display: block;
+    color: var(--color-gray-dark-80);
+    text-decoration: underline;
+    font-size: var(--size-xs);
+    padding: var(--size-xxs) 0;
+  }
+
+  // -----------------------------------------
+  //	main header section
+  // -----------------------------------------
+  &__main {
+    position: relative;
+    border-bottom: 1px solid var(--color-gray-light-60);
+    padding: var(--size-xl) 0;
+
+    .obj-container {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      gap: var(--size-md);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      padding-bottom: 0;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__main-logo {
+    color: var(--color-gray-dark-80);
+    align-self: center;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    .kicker {
+      @include font-sans;
+
+      text-transform: uppercase;
+      display: block;
+      font-size: clamp(var(--size-xs), 4vw, var(--size-sm));
+      line-height: var(--line-height-none);
+    }
+  }
+
+  &__actions {
+    margin-left: auto;
+    align-self: center;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--size-sm);
+    align-items: center;
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      flex-direction: row;
+    }
+  }
+
+  &__button--menu {
+    svg line {
+      stroke: var(--color-scarlet);
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: calc(100% + 2px); // bottom border width
+    left: 100%;
+    width: 100vw;
+    height: 100dvh;
+    padding-top: var(--size-md);
+    padding-bottom: var(--size-md);
+    background: var(--color-gray-light-40);
+    z-index: 10;
+    transition: transform 0.2s ease;
+
+    &[aria-hidden='false'] {
+      transform: translateX(-100%);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      height: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+      background: transparent;
+      grid-column: -1 / 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &[aria-hidden='false'] {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      flex-direction: row;
+      column-gap: var(--size-md);
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: var(--size-md);
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__list--primary &__link {
+    color: var(--color-gray-dark-80l);
+    font-weight: var(--weight-bold);
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: var(--color-scarlet);
+      transition: width 0.2s ease;
+
+      @media screen and (min-width: map-get($breakpoints, 'md')) {
+        height: 4px;
+        top: auto;
+        bottom: 0;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &--current {
+      &::after {
+        width: 4px;
+        @media screen and (min-width: map-get($breakpoints, 'md')) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &__list--secondary &__link {
+    color: var(--color-gray-dark-40);
+    font-size: var(--size-xs);
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      color: var(--color-gray-dark-80);
+    }
+  }
+}

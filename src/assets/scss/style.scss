@@ -24,6 +24,7 @@
 @import 'settings/scale';
 @import 'settings/colors';
 @import 'settings/fonts';
+@import 'settings/widths';
 
 // =====================================================================
 // 2. Tools
@@ -32,6 +33,7 @@
 //    partials in this section.
 
 @import 'tools/font-styles';
+@import 'tools/screen-reader';
 
 // =====================================================================
 // 3. Generic
@@ -62,6 +64,7 @@
 //    Class-based selectors which define undecorated design patterns,
 //    for example media object known from OOCSS.
 
+@import 'objects/container';
 
 // =====================================================================
 // 6. Components
@@ -69,7 +72,6 @@
 //    and our UI components are often composed of Objects and Components
 
 @import 'components/site-header';
-@import 'components/site-footer';
 
 // =====================================================================
 // 7. Vendors
@@ -84,3 +86,4 @@
 //    which goes before in the triangle, eg. hide helper class
 
 @import 'utilities/spacing';
+@import 'utilities/screen-reader';

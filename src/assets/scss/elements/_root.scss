@@ -4,7 +4,7 @@
   }
 
   @each $key, $val in $grays {
-    @each $sub_key, $sub_val in $key {
+    @each $sub_key, $sub_val in $val {
       --color-gray-#{$key}-#{$sub_key}: #{$sub_val};
     }
   }
@@ -23,6 +23,10 @@
 
   @each $key, $val in $line-heights {
     --line-height-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $widths {
+    --width-#{$key}: #{$val};
   }
 
   @media (prefers-reduced-motion) {
