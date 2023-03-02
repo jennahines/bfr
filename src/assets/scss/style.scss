@@ -56,8 +56,11 @@
 @import 'elements/h1';
 @import 'elements/h2';
 @import 'elements/h3';
+@import 'elements/h4';
+@import 'elements/h5';
 @import 'elements/p';
 @import 'elements/a';
+@import 'elements/input';
 
 // =====================================================================
 // 5. Objects
@@ -71,7 +74,9 @@
 //    Specific UI components. This is where majority of our work takes place
 //    and our UI components are often composed of Objects and Components
 
+@import 'components/button';
 @import 'components/site-header';
+@import 'components/site-footer';
 
 // =====================================================================
 // 7. Vendors
@@ -87,3 +92,5 @@
 
 @import 'utilities/spacing';
 @import 'utilities/screen-reader';
+@import 'utilities/color';
+@import 'utilities/font-size';
