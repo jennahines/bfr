@@ -1,44 +1,44 @@
 @each $key, $val in $scale-values {
   .util-margin-t-#{$key} {
-    margin-top: #{$val}rem;
+    margin-top: calc(#{$val} / #{$scale-base} * 1rem);
   }
   .util-margin-b-#{$key} {
-    margin-bottom: #{$val}rem;
+    margin-bottom: calc(#{$val} / #{$scale-base} * 1rem);
   }
   .util-margin-l-#{$key} {
-    margin-left: #{$val}rem;
+    margin-left: calc(#{$val} / #{$scale-base} * 1rem);
   }
   .util-margin-r-#{$key} {
-    margin-right: #{$val}rem;
+    margin-right: calc(#{$val} / #{$scale-base} * 1rem);
   }
   .util-margin-x-#{$key} {
-    margin-left: #{$val}rem;
-    margin-right: #{$val}rem;
+    margin-left: calc(#{$val} / #{$scale-base} * 1rem);
+    margin-right: calc(#{$val} / #{$scale-base} * 1rem);
   }
   .util-margin-y-#{$key} {
-    margin-top: #{$val}rem;
-    margin-bottom: #{$val}rem;
+    margin-top: calc(#{$val} / #{$scale-base} * 1rem);
+    margin-bottom: calc(#{$val} / #{$scale-base} * 1rem);
   }
 
   .util-padding-t-#{$key} {
-    padding-top: #{$val}rem;
+    padding-top: calc(#{$val} / #{$scale-base} * 1rem);
   }
   .util-padding-b-#{$key} {
-    padding-bottom: #{$val}rem;
+    padding-bottom: calc(#{$val} / #{$scale-base} * 1rem);
   }
   .util-padding-l-#{$key} {
-    padding-left: #{$val}rem;
+    padding-left: calc(#{$val} / #{$scale-base} * 1rem);
   }
   .util-padding-r-#{$key} {
-    padding-right: #{$val}rem;
+    padding-right: calc(#{$val} / #{$scale-base} * 1rem);
   }
   .util-padding-x-#{$key} {
-    padding-left: #{$val}rem;
-    padding-right: #{$val}rem;
+    padding-left: calc(#{$val} / #{$scale-base} * 1rem);
+    padding-right: calc(#{$val} / #{$scale-base} * 1rem);
   }
   .util-padding-y-#{$key} {
-    padding-top: #{$val}rem;
-    padding-bottom: #{$val}rem;
+    padding-top: calc(#{$val} / #{$scale-base} * 1rem);
+    padding-bottom: calc(#{$val} / #{$scale-base} * 1rem);
   }
 }
 
