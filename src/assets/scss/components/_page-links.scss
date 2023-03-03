@@ -1,0 +1,37 @@
+.page-links {
+  &__heading {
+    @include font-sans('bold');
+
+    font-size: var(--size-xl);
+    margin-bottom: var(--size-sm);
+  }
+
+  &__list {
+    padding-left: 0;
+    margin-bottom: var(--size-xxl);
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--size-xxl);
+  }
+
+  &__item {
+    border-bottom: 1px solid var(--color-gray-light-40);
+    width: 100%;
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      width: calc(50% - var(--size-xxl) / 2);
+    }
+  }
+
+  &__link {
+    width: 100%;
+    font-weight: var(--weight-bold);
+    font-size: var(--size-sm);
+    justify-content: space-between;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
