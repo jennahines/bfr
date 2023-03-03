@@ -1,0 +1,17 @@
+@each $key, $val in $scale-values {
+  .util-font-size-#{$key} {
+    font-size: calc(#{$val} / #{$scale-base} * 1rem);
+  }
+}
+
+@each $key, $val in $font-families {
+  .util-font-family-#{$key} {
+    font-family: #{$val};
+  }
+}
+
+@each $key, $val in $font-weights {
+  .util-font-weight-#{$key} {
+    font-weight: #{$val};
+  }
+}

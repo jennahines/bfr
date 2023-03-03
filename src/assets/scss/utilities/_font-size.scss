@@ -1,5 +1,0 @@
-@each $key, $val in $scale-values {
-  .util-font-size-#{$key} {
-    font-size: calc(#{$val} / #{$scale-base} * 1rem);
-  }
-}
