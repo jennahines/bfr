@@ -76,9 +76,13 @@
 //    and our UI components are often composed of Objects and Components
 
 @import 'components/button';
+@import 'components/link';
+@import 'components/kicker';
 @import 'components/site-header';
 @import 'components/site-footer';
 @import 'components/wysiwyg-content';
+@import 'components/bordered-media';
+@import 'components/content-w-media';
 
 // =====================================================================
 // 7. Vendors
