@@ -1,0 +1,59 @@
+.event-list {
+  &__heading {
+    @include font-sans('bold');
+
+    font-size: var(--size-xl);
+  }
+
+  &__list {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: var(--size-xxl);
+  }
+
+  &__link {
+    color: var(--color-gray-dark-80);
+    display: flex;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &__date {
+    padding-right: var(--size-lg);
+    margin-right: var(--size-lg);
+    border-right: 1px solid var(--color-gray-light-40);
+
+    span {
+      display: block;
+    }
+
+    .day {
+      @include font-serif('bold');
+
+      font-size: var(--size-xxxxl);
+      line-height: var(--line-height-none);
+    }
+
+    .month {
+      color: var(--color-gray-dark-40);
+      font-size: var(--size-md);
+      text-transform: uppercase;
+    }
+  }
+
+  .kicker {
+    font-size: var(--size-xs);
+  }
+
+  &__event-heading {
+    @include font-serif('bold');
+
+    font-size: var(--size-sm);
+  }
+}
