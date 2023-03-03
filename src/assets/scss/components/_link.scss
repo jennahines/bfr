@@ -1,0 +1,31 @@
+.link {
+  color: var(--color-gray-dark-80);
+  font-size: var(--size-xs);
+  padding: var(--size-xs) var(--size-md) var(--size-xs) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--size-xxs);
+  transition: color 0.2s ease;
+
+  &::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    display: block;
+    background-image: url('../images/icons/caret-right.svg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: var(--color-black);
+
+    &::after {
+      transform: translateX(4px);
+    }
+  }
+}

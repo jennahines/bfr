@@ -1,0 +1,13 @@
+.kicker {
+  @include font-sans('semibold');
+
+  text-transform: uppercase;
+  display: block;
+  font-size: clamp(var(--size-xs), 4vw, var(--size-sm));
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--size-xxs);
+
+  &--scarlet {
+    color: var(--color-scarlet);
+  }
+}
