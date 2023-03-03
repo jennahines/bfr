@@ -1,7 +1,15 @@
-.obj-container {
-  max-width: var(--width-container);
+.obj-container,
+.obj-container-sm {
   padding-left: var(--size-md);
   padding-right: var(--size-md);
   margin-left: auto;
   margin-right: auto;
+}
+
+.obj-container {
+  max-width: var(--width-container);
+}
+
+.obj-container-sm {
+  max-width: var(--width-container-sm);
 }
