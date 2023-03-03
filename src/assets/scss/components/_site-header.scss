@@ -1,6 +1,9 @@
 .site-header {
-  // overflow: hidden;
   width: 100vw;
+  position: sticky;
+  top: -70px;
+  background: var(--color-white);
+  z-index: 1000;
 
   /* The value of "content" is checked in navigation.js to
 	determine which functions to execute for mobile vs desktop nav.
