@@ -68,6 +68,7 @@
 //    for example media object known from OOCSS.
 
 @import 'objects/container';
+@import 'objects/section';
 
 // =====================================================================
 // 6. Components
@@ -77,6 +78,7 @@
 @import 'components/button';
 @import 'components/site-header';
 @import 'components/site-footer';
+@import 'components/wysiwyg-content';
 
 // =====================================================================
 // 7. Vendors
