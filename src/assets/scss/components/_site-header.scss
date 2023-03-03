@@ -146,12 +146,7 @@
     }
 
     .kicker {
-      @include font-sans;
-
-      text-transform: uppercase;
-      display: block;
-      font-size: clamp(var(--size-xs), 4vw, var(--size-sm));
-      line-height: var(--line-height-none);
+      font-weight: 400;
     }
   }
 
