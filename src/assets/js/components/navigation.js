@@ -5,6 +5,7 @@
 function Navigation() {
   const siteHeader = document.querySelector('.site-header');
   let SCREEN = window.getComputedStyle(siteHeader, '::after').content;
+  // eslint-disable-next-line prefer-destructuring
   const body = document.body;
 
   function handleUtilityMenu() {
