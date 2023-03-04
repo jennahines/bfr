@@ -75,4 +75,11 @@
       grid-column: 4 / 6;
     }
   }
+
+  @media screen and (min-width: map-get($breakpoints, 'xl')) {
+    &__content,
+    &__links {
+      padding: calc(var(--size-xxxl) * 2);
+    }
+  }
 }
