@@ -1,3 +1,9 @@
 @import '../../../../node_modules/aos/src/sass/core';
 @import '../../../../node_modules/aos/src/sass/easing';
 @import '../../../../node_modules/aos/src/sass/animations';
+
+// known bug when using fade-in from left or right
+// causes left/right scroll
+main {
+  overflow-x: hidden;
+}

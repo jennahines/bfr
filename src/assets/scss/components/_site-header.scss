@@ -1,9 +1,5 @@
 .site-header {
   width: 100vw;
-  position: sticky;
-  top: -70px;
-  background: var(--color-white);
-  z-index: 1000;
 
   /* The value of "content" is checked in navigation.js to
 	determine which functions to execute for mobile vs desktop nav.
@@ -66,17 +62,17 @@
   &__utility-nav {
     position: absolute;
     top: calc(100% + 2px); // bottom border width
-    left: 100%;
+    left: 0;
     width: 100vw;
-    height: 100dvh;
-    padding-top: var(--size-md);
-    padding-bottom: var(--size-md);
+    height: 0;
+    overflow: hidden;
     background: var(--color-gray-light-40);
     z-index: 10;
-    transition: transform 0.2s ease;
 
     &[aria-hidden='false'] {
-      transform: translateX(-100%);
+      height: 100vh;
+      padding-top: var(--size-md);
+      padding-bottom: var(--size-md);
     }
 
     @media screen and (min-width: map-get($breakpoints, 'md')) {
@@ -84,13 +80,14 @@
       top: auto;
       left: auto;
       width: auto;
-      height: auto;
-      padding-top: 0;
-      padding-bottom: 0;
       background: transparent;
+      overflow: visible;
 
+      &,
       &[aria-hidden='false'] {
-        transform: translateX(0);
+        height: auto;
+        padding-top: 0;
+        padding-bottom: 0;
       }
     }
   }
@@ -175,17 +172,18 @@
   &__nav {
     position: absolute;
     top: calc(100% + 2px); // bottom border width
-    left: 100%;
+    left: 0;
     width: 100vw;
-    height: 100dvh;
-    padding-top: var(--size-md);
-    padding-bottom: var(--size-md);
+    height: 0;
+    overflow: hidden;
     background: var(--color-gray-light-40);
     z-index: 10;
-    transition: transform 0.2s ease;
 
     &[aria-hidden='false'] {
-      transform: translateX(-100%);
+      height: 100vh;
+      padding-top: var(--size-md);
+      padding-bottom: var(--size-md);
+      overflow-y: scroll;
     }
 
     @media screen and (min-width: map-get($breakpoints, 'md')) {
@@ -193,17 +191,17 @@
       top: auto;
       left: auto;
       width: 100%;
-      height: auto;
-      padding-top: 0;
-      padding-bottom: 0;
       background: transparent;
       grid-column: -1 / 1;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
+      &,
       &[aria-hidden='false'] {
-        transform: translateX(0);
+        height: auto;
+        padding-top: 0;
+        padding-bottom: 0;
       }
     }
   }
