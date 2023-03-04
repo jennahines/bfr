@@ -50,7 +50,7 @@ function Navigation() {
         mainNavToggle.setAttribute('aria-expanded', 'true');
         mainNav.setAttribute('aria-hidden', 'false');
         body.classList.add('mobile-menu-displayed');
-        mainNav.style.height = `calc(100vh - ${siteHeader.clientHeight}px)`;
+        mainNav.style.height = `calc(100svh - ${siteHeader.clientHeight}px)`;
       }
     }
 
