@@ -5,6 +5,7 @@
 function Navigation() {
   const siteHeader = document.querySelector('.site-header');
   let SCREEN = window.getComputedStyle(siteHeader, '::after').content;
+  const body = document.body;
 
   function handleUtilityMenu() {
     const utilityNav = document.querySelector('.site-header__utility-nav');
@@ -16,9 +17,11 @@ function Navigation() {
       if (utilityNavToggle.getAttribute('aria-expanded') === 'true') {
         utilityNavToggle.setAttribute('aria-expanded', 'false');
         utilityNav.setAttribute('aria-hidden', 'true');
+        body.classList.remove('mobile-menu-displayed');
       } else {
         utilityNavToggle.setAttribute('aria-expanded', 'true');
         utilityNav.setAttribute('aria-hidden', 'false');
+        body.classList.add('mobile-menu-displayed');
       }
     }
 
@@ -37,13 +40,17 @@ function Navigation() {
     const mainNav = document.querySelector('.site-header__nav');
     const mainNavToggle = document.querySelector('.site-header__button--menu');
 
-    function toggleMobileUtilityMenu() {
+    function toggleMobileMainMenu() {
       if (mainNavToggle.getAttribute('aria-expanded') === 'true') {
         mainNavToggle.setAttribute('aria-expanded', 'false');
         mainNav.setAttribute('aria-hidden', 'true');
+        body.classList.remove('mobile-menu-displayed');
+        mainNav.style.removeProperty('height');
       } else {
         mainNavToggle.setAttribute('aria-expanded', 'true');
         mainNav.setAttribute('aria-hidden', 'false');
+        body.classList.add('mobile-menu-displayed');
+        mainNav.style.height = `calc(100vh - ${siteHeader.clientHeight}px)`;
       }
     }
 
@@ -51,7 +58,7 @@ function Navigation() {
       mainNav.setAttribute('aria-hidden', 'true');
       mainNavToggle.setAttribute('aria-hidden', 'false');
       mainNavToggle.setAttribute('aria-expanded', 'false');
-      mainNavToggle.addEventListener('click', toggleMobileUtilityMenu);
+      mainNavToggle.addEventListener('click', toggleMobileMainMenu);
     } else {
       mainNav.setAttribute('aria-hidden', 'false');
       mainNavToggle.setAttribute('aria-hidden', 'true');
